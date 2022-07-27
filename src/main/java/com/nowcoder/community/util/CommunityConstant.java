@@ -31,4 +31,14 @@ public interface CommunityConstant {
      * 重置密码的验证码超时时间
      */
     int RESET_PASSWORD_CODE_EXPIRED_SECONDS = 60 * 5;
+
+    /**
+     * 实体类型: 帖子
+     */
+    int ENTITY_TYPE_POST = 1;
+
+    /**
+     * 实体类型: 评论
+     */
+    int ENTITY_TYPE_COMMENT = 2;
 }

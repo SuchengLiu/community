@@ -137,14 +137,7 @@ public class LoginController implements CommunityConstant {
 
     @RequestMapping(path = "/send-code", method = RequestMethod.POST)
     public String sendCodeToEmail (Model model, String email, HttpSession session) {
-        Map<String, Object> map = userService.sendCodeToEmail(email);
-        if (map.containsKey("emailMsg")) {
-            model.addAttribute("emailMsg", map.get("emailMsg"));
-        } else {
-            session.setAttribute("code", map.get("code"));
-            session.setAttribute("expired", map.get("expired"));
-        }
-        return "/site/forget";
+        return null;
     }
 
     @RequestMapping(path = "/reset-password", method = RequestMethod.POST)

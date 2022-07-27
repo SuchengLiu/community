@@ -113,11 +113,11 @@ public class UserController {
     @RequestMapping(path = "/resetPassword", method = RequestMethod.POST)
     public String resetPassword (Model model, String oldPassword, String newPassword) {
         User user = hostHolder.getUser();
-        Map<String, Object> map = userService.resetPassword(user.getId(), oldPassword, newPassword);
+        Map<String, Object> map = userService.resetPassword(user, oldPassword, newPassword);
         if (map == null || map.isEmpty()) {
             return "redirect:/logout";
         } else {
-            model.addAttribute("passwordMsg", map.get("passwordMsg"));
+            model.addAttribute("oldPasswordMsg", map.get("oldPasswordMsg"));
             model.addAttribute("newPasswordMsg", map.get("newPasswordMsg"));
             return "/site/setting";
         }
