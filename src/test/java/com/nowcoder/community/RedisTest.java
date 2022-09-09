@@ -100,6 +100,7 @@ public class RedisTest {
     @Test
     public void testBoundOperations() {
         String redisKey = "test:count";
+        // BoundValueOperations就是一个绑定key的对象，我们可以通过这个对象来进行与key相关的操作。
         BoundValueOperations operations = redisTemplate.boundValueOps(redisKey);
         operations.increment();
         operations.increment();
